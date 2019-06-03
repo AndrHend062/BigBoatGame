@@ -189,7 +189,7 @@ namespace BigBoatGame.Screens
             {
                 int side = randGen.Next(1, 3);
                 int position = randGen.Next(1, 4);
-                if (side == 1)
+                if (side == 1) //Spawn the plane on either the left or right side
                 {
                     side = -100;
                 }
@@ -197,11 +197,7 @@ namespace BigBoatGame.Screens
                 {
                     side = this.Width + 100;
                 }
-                if (position == 1)
-                {
-                    position = this.Height / 4;
-                }
-                if (position == 1)
+                if (position == 1) //Spawn the plane at one of three different y values
                 {
                     position = this.Height / 4;
                 }
