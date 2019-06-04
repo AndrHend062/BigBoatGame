@@ -31,7 +31,7 @@ namespace BigBoatGame
                     rect.Y -= speed;
                     break;
                 case 1: //upRight
-                    rect.Y -= speed*2/3;
+                    rect.Y -= speed * 2 / 3;
                     rect.X += speed * 2 / 3;
                     break;
                 case 2: //right
