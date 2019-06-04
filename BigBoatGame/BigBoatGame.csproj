@@ -178,9 +178,9 @@
     <None Include="Resources\Images\F4F-4_UpRight.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Highscores.xml">
+    <None Include="Resources\Highscores.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background.png" />
