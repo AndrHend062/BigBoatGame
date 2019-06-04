@@ -31,29 +31,29 @@ namespace BigBoatGame
                     rect.Y -= speed;
                     break;
                 case 1: //upRight
-                    rect.Y -= speed/2;
-                    rect.X += speed / 2;
+                    rect.Y -= speed*2/3;
+                    rect.X += speed * 2 / 3;
                     break;
                 case 2: //right
                     rect.X += speed;
                     break;
                 case 3: //downRight
-                    rect.Y += speed / 2;
-                    rect.X += speed / 2;
+                    rect.Y += speed * 2 / 3;
+                    rect.X += speed * 2 / 3;
                     break;
                 case 4: //down
                     rect.Y += speed;
                     break;
                 case 5: //downLeft
-                    rect.Y += speed/2;
-                    rect.X -= speed / 2;
+                    rect.Y += speed * 2 / 3;
+                    rect.X -= speed * 2 / 3;
                     break;
                 case 6: //left
                     rect.X -= speed;
                     break;
                 case 7: //upLeft
-                    rect.Y -= speed / 2;
-                    rect.X -= speed / 2;
+                    rect.Y -= speed * 2 / 3;
+                    rect.X -= speed * 2 / 3;
                     break;
             }
         }

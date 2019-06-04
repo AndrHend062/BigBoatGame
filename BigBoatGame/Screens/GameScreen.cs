@@ -24,11 +24,11 @@ namespace BigBoatGame.Screens
 
         int waves;
         public static int carrierHP;
-        int gameTime;
+        int gameTime, primaryTime, secondaryTime;
         public Carrier carrier;
         public Plane player;
         public Plane enemy;
-        Boolean upKeyDown, rightKeyDown, leftKeyDown, downKeyDown, spaceKeyDown;
+        Boolean upKeyDown, rightKeyDown, leftKeyDown, downKeyDown, spaceKeyDown, primaryReload, secondaryReload;
 
         public GameScreen()
         {
@@ -158,8 +158,9 @@ namespace BigBoatGame.Screens
                 p.Update();
                 p.GunPosition();
                 p.Move();
-                if (spaceKeyDown && p.shotClock > p.fireRate)
+                if (spaceKeyDown && p.shotClock > p.fireRate && p.ammo1 > 0)
                 {
+                    p.ammo1--;
                     if (p.gunSide)
                     {
                         bullets.Add(p.Shoot(Convert.ToInt16(p.direction), true, true));
@@ -169,6 +170,10 @@ namespace BigBoatGame.Screens
                         bullets.Add(p.Shoot(Convert.ToInt16(p.direction), true, false));
                     }
                     p.gunSide = !p.gunSide;
+                }
+                if (p.ammo1 <= 0)
+                {
+                    PrimaryReload();
                 }
                 foreach (Plane en in enemies)
                 {
@@ -181,6 +186,25 @@ namespace BigBoatGame.Screens
             }
 
             Refresh();
+        }
+
+        public void PrimaryReload()
+        {
+            if (primaryReload)
+            {
+                primaryTime--;
+            }
+            else
+            {
+                primaryReload = true;
+                primaryTime = 100;
+            }
+
+            if (primaryTime == 0 && primaryReload == true)
+            {
+                primaryReload = false;
+                player.ammo1 = 40;
+            }
         }
 
         public void EnemySpawn(string type)
@@ -252,7 +276,16 @@ namespace BigBoatGame.Screens
             {
                 e.Graphics.DrawString("Speed: " + player.speed * 15 + "km/h", textFont, textBrush, this.Width - 150, 200);
             }
-            e.Graphics.DrawString("Primary: " + player.ammo1, textFont, textBrush, this.Width - 150, 225);
+
+            if (primaryReload)
+            {
+                e.Graphics.DrawString("Reload: " + primaryTime, textFont, textBrush, this.Width - 150, 225);
+            }
+            else
+            {
+                e.Graphics.DrawString("Primary: " + player.ammo1, textFont, textBrush, this.Width - 150, 225);
+            }
+            
             e.Graphics.DrawString("Secondary: " + player.ammo2, textFont, textBrush, this.Width - 150, 250);
         }
     }
