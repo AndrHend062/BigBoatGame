@@ -93,6 +93,12 @@
     <Compile Include="Screens\MenuScreen.Designer.cs">
       <DependentUpon>MenuScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\PauseScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\PauseScreen.Designer.cs">
+      <DependentUpon>PauseScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\MenuScreen.resx">
       <DependentUpon>MenuScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\PauseScreen.resx">
+      <DependentUpon>PauseScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -210,10 +219,34 @@
     <None Include="Resources\Images\A6M2_Up.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Lexington.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\Shokaku.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Lexington.png" />
+    <None Include="Resources\Engine1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Engine2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Engine3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MachineGun.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Secondary.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Grenade-SoundBible.com-1777900486.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Joystick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Joystick2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

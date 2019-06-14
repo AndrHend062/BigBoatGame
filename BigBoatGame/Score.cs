@@ -8,10 +8,12 @@ namespace BigBoatGame
 {
     public class Score
     {
-        public string name,number;
+        public string name;
+        public int number;
         public Score()
         {
-            name = number = "";
+            name = "";
+            number = 0;
         }
     }
 }

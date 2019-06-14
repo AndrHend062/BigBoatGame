@@ -95,12 +95,13 @@
             // 
             // msgLabel
             // 
+            this.msgLabel.AutoSize = true;
             this.msgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msgLabel.Location = new System.Drawing.Point(427, 77);
             this.msgLabel.Name = "msgLabel";
-            this.msgLabel.Size = new System.Drawing.Size(281, 23);
+            this.msgLabel.Size = new System.Drawing.Size(340, 25);
             this.msgLabel.TabIndex = 7;
-            this.msgLabel.Text = "label1";
+            this.msgLabel.Text = "you you you you you you you you ";
             // 
             // EndScreen
             // 
@@ -118,6 +119,7 @@
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.EndScreen_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.carrierBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -76,7 +76,7 @@ namespace BigBoatGame.Screens
 
                 //Write sub-elements
                 writer.WriteStartElement("player");
-                writer.WriteAttributeString("number", GameForm.scores[i].number);
+                writer.WriteAttributeString("number", GameForm.scores[i].number+"");
                 writer.WriteAttributeString("name", GameForm.scores[i].name);
                 writer.WriteEndElement();
             }

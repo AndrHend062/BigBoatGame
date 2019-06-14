@@ -15,7 +15,7 @@ namespace BigBoatGame
     {
         public static string msg;
         public static List<Score> scores;
-        public static string score;
+        public static int score;
         XmlReader reader; 
         public static bool yank = true;
         public static bool vs = false;
@@ -42,10 +42,7 @@ namespace BigBoatGame
         public void XmlRead()
         {
             try {
-                //if (!System.IO.File.Exists("Resources/HighScores.xml"))
-                //{
-                //    System.IO.File.Create("Resources/HighScores.xml");
-                //}
+
                 scores = new List<Score>();
                 reader = XmlReader.Create("Resources/HighScores.xml");
 
@@ -55,9 +52,9 @@ namespace BigBoatGame
                     {
                         // create a score object
                         Score s = new Score();
-
+                        
                         // fill score object with required data
-                        s.number = reader.GetAttribute("number");
+                        s.number = Convert.ToInt16(reader.GetAttribute("number"));
                         s.name = reader.GetAttribute("name");
 
                         scores.Add(s);
@@ -75,7 +72,10 @@ namespace BigBoatGame
         {
             //f is set to the form that the current control is on
             Form f = current.FindForm();
-            f.Controls.Remove(current);
+            if (next != "PauseScreen")
+            {
+                f.Controls.Remove(current);
+            }
             UserControl ns = null;
 
             //switches screen
@@ -92,10 +92,7 @@ namespace BigBoatGame
                     break;
                 case "HowScreen":
                     ns = new Screens.HowScreen();
-                    break;
-                case "NameScreen":
-                   // ns = new NameScreen1();
-                    break;
+                    break;   
                 case "EndScreen":
                      ns = new Screens.EndScreen();
                     break;

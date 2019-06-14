@@ -32,7 +32,12 @@ namespace BigBoatGame.Screens
                 oneLabel.Visible = false;
                 twoLabel.Visible = false;
                 threeLabel.Visible = false;
+                carrierBox.Visible = false;
 
+            }
+            if (GameForm.yank)
+            {
+                carrierBox.Image = Properties.Resources.Lexington;
             }
         }
        
