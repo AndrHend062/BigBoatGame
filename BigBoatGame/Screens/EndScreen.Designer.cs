@@ -40,6 +40,7 @@
             // 
             // carrierBox
             // 
+            this.carrierBox.BackColor = System.Drawing.Color.Transparent;
             this.carrierBox.BackgroundImage = global::BigBoatGame.Properties.Resources.Shokaku;
             this.carrierBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.carrierBox.Location = new System.Drawing.Point(155, 77);
@@ -50,16 +51,19 @@
             // 
             // scoreLabel
             // 
+            this.scoreLabel.AutoSize = true;
+            this.scoreLabel.BackColor = System.Drawing.Color.LightSlateGray;
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.Location = new System.Drawing.Point(423, 132);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(277, 55);
+            this.scoreLabel.Size = new System.Drawing.Size(90, 24);
             this.scoreLabel.TabIndex = 2;
             this.scoreLabel.Text = "la ywyeyy";
             // 
             // oneLabel
             // 
-            this.oneLabel.Font = new System.Drawing.Font("Kuenst480 Blk BT", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oneLabel.BackColor = System.Drawing.Color.Transparent;
+            this.oneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oneLabel.Location = new System.Drawing.Point(704, 223);
             this.oneLabel.Name = "oneLabel";
             this.oneLabel.Size = new System.Drawing.Size(70, 75);
@@ -68,7 +72,8 @@
             // 
             // twoLabel
             // 
-            this.twoLabel.Font = new System.Drawing.Font("Kuenst480 Blk BT", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.twoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.twoLabel.Location = new System.Drawing.Point(813, 223);
             this.twoLabel.Name = "twoLabel";
             this.twoLabel.Size = new System.Drawing.Size(70, 75);
@@ -77,7 +82,8 @@
             // 
             // threeLabel
             // 
-            this.threeLabel.Font = new System.Drawing.Font("Kuenst480 Blk BT", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.threeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.threeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.threeLabel.Location = new System.Drawing.Point(922, 223);
             this.threeLabel.Name = "threeLabel";
             this.threeLabel.Size = new System.Drawing.Size(70, 75);
@@ -86,16 +92,19 @@
             // 
             // ContinueLabel
             // 
+            this.ContinueLabel.AutoSize = true;
+            this.ContinueLabel.BackColor = System.Drawing.Color.LightSlateGray;
             this.ContinueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContinueLabel.Location = new System.Drawing.Point(717, 442);
+            this.ContinueLabel.Location = new System.Drawing.Point(752, 483);
             this.ContinueLabel.Name = "ContinueLabel";
-            this.ContinueLabel.Size = new System.Drawing.Size(294, 23);
+            this.ContinueLabel.Size = new System.Drawing.Size(205, 20);
             this.ContinueLabel.TabIndex = 6;
             this.ContinueLabel.Text = "Press space to Continue";
             // 
             // msgLabel
             // 
             this.msgLabel.AutoSize = true;
+            this.msgLabel.BackColor = System.Drawing.Color.LightSlateGray;
             this.msgLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msgLabel.Location = new System.Drawing.Point(427, 77);
             this.msgLabel.Name = "msgLabel";
@@ -107,6 +116,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BigBoatGame.Properties.Resources.Background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.msgLabel);
             this.Controls.Add(this.ContinueLabel);
             this.Controls.Add(this.threeLabel);

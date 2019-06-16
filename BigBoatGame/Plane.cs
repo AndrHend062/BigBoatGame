@@ -71,6 +71,10 @@ namespace BigBoatGame
                     ammo2 = 0;
                     gunNumber = 1;
                     maxSpeed = 5;
+                    Stagger = GameForm.rand.Next(10, 50);
+                    target = GameForm.rand.Next(150, 600);
+                    rect.Y = target;
+                    rect.X -= Stagger;
                     break;
                 case "B7A2":
                     cannon = false;
@@ -491,21 +495,21 @@ namespace BigBoatGame
                     switch (direction)                        // TODO change image directory when images are done
                     {
                         case Direction.Up:
-                            return Properties.Resources.F4F_4_Up;
+                            return Properties.Resources.A6M2_Up;
                         case Direction.UpRight:
-                            return Properties.Resources.F4F_4_UpRight;
+                            return Properties.Resources.A6M2_UpRight;
                         case Direction.Right:
-                            return Properties.Resources.F4F_4_Right;
+                            return Properties.Resources.A6M2_Right;
                         case Direction.DownRight:
-                            return Properties.Resources.F4F_4_DownRight;
+                            return Properties.Resources.A6M2_DownRight;
                         case Direction.Down:
-                            return Properties.Resources.F4F_4_Down;
+                            return Properties.Resources.A6M2_Down;
                         case Direction.DownLeft:
-                            return Properties.Resources.F4F_4_DownLeft;
+                            return Properties.Resources.A6M2_DownLeft;
                         case Direction.Left:
-                            return Properties.Resources.F4F_4_Left;
+                            return Properties.Resources.A6M2_Left;
                         case Direction.UpLeft:
-                            return Properties.Resources.F4F_4_UpLeft;
+                            return Properties.Resources.A6M2_UpLeft;
                     }
                     return Properties.Resources.F4F_4_Up;
 

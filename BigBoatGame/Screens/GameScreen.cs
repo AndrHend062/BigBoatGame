@@ -35,7 +35,7 @@ namespace BigBoatGame.Screens
         public Carrier carrier, dummy;
         public Plane player;
         public Plane enemy;
-        Boolean upKeyDown, rightKeyDown, leftKeyDown, downKeyDown, wKeyDown, dKeyDown, aKeyDown, sKeyDown, mKeyDown, spaceKeyDown, zKeyDown, xKeyDown;
+        Boolean upKeyDown, rightKeyDown, leftKeyDown, downKeyDown, wKeyDown, dKeyDown, aKeyDown, sKeyDown, mKeyDown, spaceKeyDown, zKeyDown, xKeyDown, escapeKeyDown,paused;
 
         public GameScreen()
         {
@@ -52,8 +52,8 @@ namespace BigBoatGame.Screens
             gameTimer.Start();
             if (GameForm.vs)
             {
-                players.Add(player = new Plane(8, 250, 550, 0, "F4F_4" ));
-                enemies.Add(player = new Plane(5, 250, 250, 0, "A6M2"));
+                players.Add(player = new Plane(8, 750, 350, 0, "F4F_4" ));
+                enemies.Add(player = new Plane(5, 250, 350, 0, "A6M2"));
             }
             else
             {
@@ -109,6 +109,9 @@ namespace BigBoatGame.Screens
                 case Keys.X:
                     xKeyDown = true;
                     break;
+                case Keys.Escape:
+                    escapeKeyDown = true;
+                    break;
             }
         }
 
@@ -153,6 +156,9 @@ namespace BigBoatGame.Screens
                 case Keys.X:
                     xKeyDown = false;
                     break;
+                case Keys.Escape:
+                    escapeKeyDown = false;
+                    break;
             }
         }
 
@@ -163,10 +169,8 @@ namespace BigBoatGame.Screens
             BulletStuff(enemies, bullets, "America Player Wins!"); // bullet collision and updates with enemies and bullets
             ShootStuff(players,bullets, spaceKeyDown, mKeyDown);
 
-
             if (GameForm.vs) // vs mode checks
             {
-
                 if (dKeyDown)
                 {
                     enemies[0].Turn(true);
@@ -256,6 +260,17 @@ namespace BigBoatGame.Screens
                         GameOver("The carrier has been destroyed. This is a shameful display!", "EndScreen");
                         break;
                     }
+                    if (en.Colision(player))
+                    {
+                        player.hp -= 2;
+                        if (player.hp <= 0)
+                        {
+                            GameOver("You have chrashed into the ocean", "EndScreen");
+                        }
+                        enemies.Remove(en);
+                        break;
+                    }
+                    
                 }
             }
             Refresh();
@@ -371,7 +386,6 @@ namespace BigBoatGame.Screens
 
                 enemies.Add(enemy = new Plane(2, - 100, position, 0, type));
             }
-
         }
 
         public void GameOver(string msg,string screen) /// game over changes screen
