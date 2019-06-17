@@ -97,9 +97,9 @@
             this.ContinueLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ContinueLabel.Location = new System.Drawing.Point(752, 483);
             this.ContinueLabel.Name = "ContinueLabel";
-            this.ContinueLabel.Size = new System.Drawing.Size(205, 20);
+            this.ContinueLabel.Size = new System.Drawing.Size(207, 20);
             this.ContinueLabel.TabIndex = 6;
-            this.ContinueLabel.Text = "Press space to Continue";
+            this.ContinueLabel.Text = "Press Green to Continue";
             // 
             // msgLabel
             // 

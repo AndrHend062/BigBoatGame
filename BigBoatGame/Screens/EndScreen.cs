@@ -107,6 +107,11 @@ namespace BigBoatGame.Screens
                         threeLabel.BackColor = Color.Transparent;
                         threeLabel.ForeColor = Color.Black;
                         break;
+                    case Keys.Space:
+                        s.name = oneLabel.Text + twoLabel.Text + threeLabel.Text;
+                        GameForm.scores.Add(s);
+                        GameForm.ChangeScreen(this, "HighScreen");
+                        break;
 
                         //case Keys.Escape:
                         //    GameForm.ChangeScreen(this, "MenuScreen");
@@ -124,10 +129,9 @@ namespace BigBoatGame.Screens
                         selected(threeLabel);
                         break;
                     case 3:
-                        s.name = oneLabel.Text + twoLabel.Text + threeLabel.Text;
-                        GameForm.scores.Add(s);
-                        GameForm.ChangeScreen(this, "HighScreen");
+                  
                         break;
+                   
 
                 }
             }

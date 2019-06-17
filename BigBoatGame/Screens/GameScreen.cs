@@ -381,6 +381,10 @@ namespace BigBoatGame.Screens
             foreach (Plane p in enemies)
             {
                 e.Graphics.DrawImage(p.playerImage(), p.rect);
+                if (p.bombed)
+                {
+                    e.Graphics.DrawImage(Properties.Resources.ExplosionGif, carrier.rect.X-10, p.rect.Y-20,100,100);
+                }
             }
             foreach (Bullet b in bullets)
             {
