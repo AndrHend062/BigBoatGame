@@ -49,6 +49,7 @@ namespace BigBoatGame.Screens
         {
             gameTime = 0;
             waves = 0;
+            GameForm.score = 0;
 
             gameTimer.Start();
             if (GameForm.vs)

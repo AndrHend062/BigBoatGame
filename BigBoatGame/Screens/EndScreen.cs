@@ -87,8 +87,18 @@ namespace BigBoatGame.Screens
                         }
                         break;
 
-                    case Keys.Space:
+                    case Keys.Right:
                         boxNumber++;
+                        c = 'A';
+                        twoLabel.BackColor = Color.Transparent;
+                        twoLabel.ForeColor = Color.Black;
+                        oneLabel.BackColor = Color.Transparent;
+                        oneLabel.ForeColor = Color.Black;
+                        threeLabel.BackColor = Color.Transparent;
+                        threeLabel.ForeColor = Color.Black;
+                        break;
+                    case Keys.Left:
+                        boxNumber--;
                         c = 'A';
                         twoLabel.BackColor = Color.Transparent;
                         twoLabel.ForeColor = Color.Black;
