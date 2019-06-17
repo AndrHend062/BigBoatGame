@@ -11,7 +11,7 @@ namespace BigBoatGame
     {
         public Direction direction;
         public int hp, x, y, speed, ammo1, ammo2, shotClock, fireRate, primaryCounter, secondaryCounter, maxSpeed;
-        int gunNumber,turnTimer, speedMult, speedTimer, target,Stagger;
+        int turnTimer, speedTimer, target,Stagger;
         public bool cannon, gunSide, reload1, reload2;
         public bool bombed = false;
         public Rectangle rect;
@@ -56,20 +56,17 @@ namespace BigBoatGame
                     cannon = false;
                     ammo1 = 40;
                     ammo2 = 40;
-                    gunNumber = 3;
                     break;
                 case "A6M2":
                     cannon = true;
                     ammo1 = 40;
                     ammo2 = 20;
-                    gunNumber = 2;
                     break;
                 case "Dauntless":
                     cannon = false;
                     hp = 2;
                     ammo1 = 40;
                     ammo2 = 0;
-                    gunNumber = 1;
                     maxSpeed = 5;
                     Stagger = GameForm.rand.Next(10, 50);
                     target = GameForm.rand.Next(150, 600);
@@ -81,7 +78,6 @@ namespace BigBoatGame
                     hp = 1;
                     ammo1 = 40;
                     ammo2 = 0;
-                    gunNumber = 1;
                     maxSpeed = 5;
                     Stagger = GameForm.rand.Next(10, 50);
                     target = GameForm.rand.Next(150, 600);
@@ -320,12 +316,12 @@ namespace BigBoatGame
             return bullet;
         }
 
-        public Bullet BackShoot(int shootDirection)
-        {
-                shotClock = 0;
-                Bullet b = new Bullet(backGun.X, backGun.Y, false, shootDirection);
-                return b;
-        }
+        //public Bullet BackShoot(int shootDirection)
+        //{
+        //        shotClock = 0;
+        //        Bullet b = new Bullet(backGun.X, backGun.Y, false, shootDirection);
+        //        return b;
+        //}
 
 
         public void GunPosition()
